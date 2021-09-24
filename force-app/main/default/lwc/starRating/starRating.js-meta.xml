@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Star Rating</masterLabel>
+    <targets>
+        <target>lightningStatic__Email</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningStatic__Email">
+            <property
+        name="formUrl"
+        type="String"
+        label="Form URL"
+        description="Custom Form Handler URL where form data will be sent."
+        required="true"
+        default="https://todo"
+      />
+                    <property
+        name="recipientEmail"
+        type="String"
+        label="Recipient Email"
+        description="Email used to match with a prospect record."
+        required="true"
+        default="{{Recipient.Email}}"
+      />
+                    <property
+        name="questionLabel"
+        type="String"
+        label="Question Label"
+        default="Give us some feedback"
+      />
+                    <property
+        name="formFieldName"
+        type="String"
+        label="Form Field Name"
+        description="Name of the field in which the rating value will be sent."
+        required="true"
+        default="rating"
+      />
+            <property
+        name="starCount"
+        type="Integer"
+        label="Star Count"
+        description="Number of stars available for rating."
+        required="true"
+        default="5"
+      />
+      <property
+        name="labelAlignment"
+        label="Label Alignment"
+        type="String"
+        datasource="left,center,right"
+        required="true"
+        default="left"
+      />
+      <property
+        name="labelColor"
+        type="Color"
+        label="Label Color"
+        required="true"
+        default="#014486"
+      />
+      <property
+        name="starColor"
+        type="Color"
+        label="Star Color"
+        required="true"
+        default="#0176d3"
+      />
+      <property
+        name="starHoverColor"
+        type="Color"
+        label="Star Hover Color"
+        description="Previewed unavailable in Email Builder (hover disabled), use the email template preview."
+        required="true"
+        default="#FFFFFF"
+      />
+      <property
+        name="starHoverBgColor"
+        type="Color"
+        label="Star Hover Background Color"
+        description="Previewed unavailable in Email Builder (hover disabled), use the email template preview."
+        required="true"
+        default="#0176d3"
+      />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
